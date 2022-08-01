@@ -208,7 +208,8 @@ data GlobalMemoryHooks w =
 defaultGlobalMemoryHooks :: GlobalMemoryHooks w
 defaultGlobalMemoryHooks =
   GlobalMemoryHooks {
-    populateRelocation = \_ r -> return (error ("SymbolicRef SegmentRanges are not supported yet: " ++ show r))
+    -- populateRelocation = \_ r -> return (error ("SymbolicRef SegmentRanges are not supported yet: " ++ show r))
+    populateRelocation = \_ r -> pure []
     }
 
 -- | A version of 'newGlobalMemory' that enables some of the memory model
